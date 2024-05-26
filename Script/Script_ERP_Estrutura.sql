@@ -1,8 +1,14 @@
+-- ---------------------------------------------------------------
+-- Script de Utilização de 3 Tabelas
+-- ---------------------------------------------------------------
+--
+-- Eliminar tabelas se existirem
 DROP TABLE IF EXISTS TB_PRODUTO
 DROP TABLE IF EXISTS TB_SUBCATEG
 DROP TABLE IF EXISTS TB_CATEG
 GO
 
+-- Criação...
 CREATE TABLE TB_CATEG(
 	ID_CATEG INT NOT NULL PRIMARY KEY IDENTITY (1,1),
 	DS_CATEG VARCHAR (200) NOT NULL,
@@ -10,7 +16,7 @@ CREATE TABLE TB_CATEG(
 
 CREATE TABLE TB_SUBCATEG(
 	ID_SUBCATEG INT NOT NULL PRIMARY KEY IDENTITY (1,1),
-	DS_SUBTEG VARCHAR (200) NOT NUll,
+	DS_SUBCATEG VARCHAR (200) NOT NUll,
 	ID_CATEG INT NOT NULL,
 	FOREIGN KEY (ID_CATEG) REFERENCES TB_CATEG (ID_CATEG)
 )
