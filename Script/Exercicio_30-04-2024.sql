@@ -1,0 +1,22 @@
+create database LOJA_1
+go
+
+use LOJA_1
+go
+
+create table TB_FORNEC(
+	Id_Fornec int not null primary key identity (1,1),
+	Nm_Fornec varchar (250) not null,
+	Nr_CNPJ numeric (14) not null
+	)
+
+create table TB_PRODUTO(
+	Id_Produto int not null primary key identity (1,1),
+	Nm_Produto varchar (250) not null,
+	Pr_Custo numeric (19,2) not null,
+	Pr_Venda numeric (19,2) not null,
+	Dt_Cadastro DateTime not null,
+	Id_Fornec int not null,
+	foreign key (Id_Fornec) references TB_FORNEC (Id_Fornec)
+)
+
